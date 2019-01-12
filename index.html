@@ -7,9 +7,28 @@
       content="width=device-width,initial-scale=1,shrink-to-fit=no"
     />
     <meta name="theme-color" content="#000000" />
+    <script>
+      window.addEventListener(
+        "load",
+        function(a) {
+          window.applicationCache.addEventListener(
+            "updateready",
+            function(a) {
+              window.applicationCache.status ==
+                window.applicationCache.UPDATEREADY &&
+                (window.applicationCache.swapCache(),
+                confirm("A new version is available. Load it?") &&
+                  window.location.reload());
+            },
+            !1
+          );
+        },
+        !1
+      );
+    </script>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    <title>Grid Demo</title>
+    <title>Scent Grid</title>
     <link href="main.css" rel="stylesheet" />
   </head>
   <body>
